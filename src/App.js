@@ -5,12 +5,16 @@ import WordCard from './WordCard';
 
 let allword = ['Apple','banana','hello','react','javascript','yarn']
 
-const word = allword[Math.floor(Math.random() * 6)];
-
 function App() {
+  const className1 = 'reloadbotton'
+  function refreshPage() {
+    window.location.reload(false);
+  }
+  
   return (
     <div>
-      <WordCard value={word}/>
+      <WordCard value={allword}/>
+      <button onClick={refreshPage} className = {className1}>Click to reload!</button>
     </div>
   );
 }

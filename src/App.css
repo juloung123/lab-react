@@ -11,3 +11,11 @@
     color: red;
     background: blue;
 }
+.reloadbotton{
+    color: blanchedalmond;
+    background: black;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 40px;
+}
