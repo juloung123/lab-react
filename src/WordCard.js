@@ -15,15 +15,25 @@ const prepareStateFromword = given_word => {
         check:0,
     }
 }
+const helpchar = given_word =>{
+    return {
+        help : '',
+        current : true,
+    }
+}
 
 export default function WordCard(props){
     const className1 = 'reloadbotton'
     const word1 = props.value[Math.floor(Math.random() * 6)];
+    const word2 = 'help'
     const [state, setState] = useState(prepareStateFromword(word1))
-    let sethelp = state.help-1
-    // let helpguess = state.guess + state.word.charAt(state.check)
-    function help(){ 
-        console.log(`${state.word.charAt(state.check)} has been activated`)
+    const [help, sethelp] = useState(helpchar(word2))
+    function helper(){ 
+        if(help.current == true){
+            console.log(`${state.word.charAt(state.check)} has been activated`)
+            const charhelp = state.word.charAt(state.check)
+            sethelp({...help , help : charhelp , current : 'false'})
+        }
     }
     const activationHandler = c => {
         console.log(`${c} has been activated`)
@@ -53,7 +63,7 @@ export default function WordCard(props){
                     <CharacterCard value={c} key={i} activationHandler={activationHandler} attempt={state.attempt}/>
                 )
             }
-            <botton onClick = {help} className = {className1}>Help</botton>
+            <botton onClick = {helper} className = {className1} style = {styles.style}>Click for 1 Help : {help.help}</botton>
         </div>
     )
 }
