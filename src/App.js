@@ -15,6 +15,7 @@ function App() {
   return (
     <div style={styles.style} className = 'component'>
       <WordCard value={allword}/>
+      <br></br>
       <button onClick={refreshPage} className = {className1}>I'm loser i want to reload</button>
     </div>
   );

@@ -28,3 +28,11 @@
     background-repeat: no-repeat; 
     background-size: cover;
 }
+.congrat{
+    color: blanchedalmond;
+    background: url(../src/bgcon.jpg);
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 100px;
+}

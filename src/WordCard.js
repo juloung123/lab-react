@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import _ from 'lodash';
 import CharacterCard from './CharacterCard';
+import './App.css';
 
 const prepareStateFromword = given_word => {
     let word = given_word.toUpperCase()
@@ -13,6 +14,7 @@ const prepareStateFromword = given_word => {
         complete: false,
         help:1,
         check:0,
+        wonword:'',
     }
 }
 const helpchar = given_word =>{
@@ -46,7 +48,7 @@ export default function WordCard(props){
         if(guess.length ==  state.word.length){
             if(guess == state.word){
                 console.log('yeah !')
-                setState({...state, complete: true})
+                setState({...state, complete: true , wonword : 'You won !!!'})
             }
             else{
                 console.log('reset, next attempt')
@@ -59,6 +61,7 @@ export default function WordCard(props){
 
     return (
         <div>
+            <div className = 'congrat' style = {styles.style}>{state.wonword}</div>
             { 
                 state.chars.map((c,i) => 
                     <CharacterCard value={c} key={i} activationHandler={activationHandler} attempt={state.attempt}/>
