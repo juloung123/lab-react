@@ -13,9 +13,9 @@ function App() {
   }
   
   return (
-    <div style={styles.style}>
+    <div style={styles.style} className = 'component'>
       <WordCard value={allword}/>
-      <button onClick={refreshPage} className = {className1}>Click to reload!</button>
+      <button onClick={refreshPage} className = {className1}>I'm loser i want to reload</button>
     </div>
   );
 }

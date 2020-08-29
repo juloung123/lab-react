@@ -6,6 +6,7 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     margin: 1em;
     user-select: none;
+    background:wheat;
    }
 .activeCard{
     color: red;
@@ -18,4 +19,12 @@
     font-style: italic;
     font-weight: bold;
     font-size: 40px;
+}
+.component{
+    background: url(../src/bg.jpg) ;
+    background-size: 1920*1080; 
+    height: 1080px;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
 }

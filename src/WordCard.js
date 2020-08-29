@@ -32,7 +32,7 @@ export default function WordCard(props){
         if(help.current == true){
             console.log(`${state.word.charAt(state.check)} has been activated`)
             const charhelp = state.word.charAt(state.check)
-            sethelp({...help , help : charhelp , current : 'false'})
+            sethelp({...help , help : charhelp , current : false})
         }
     }
     const activationHandler = c => {
@@ -51,6 +51,7 @@ export default function WordCard(props){
             else{
                 console.log('reset, next attempt')
                 setState({...state, guess : '' , attempt : state.attempt + 1 , check : 0})
+                sethelp({...help , current : true})
                 console.log(state.attempt)
             }
         }
